@@ -1,19 +1,45 @@
 {% extends "base.html" %}
 {% block title %}Projects{% endblock %}
 {% block content %}
-<section>
-    <h1>Projects</h1>
-    <ul>
-        <li>
-            <h2>Project 1</h2>
-            <p>Description of the project and tools used.</p>
-            <a href="#">GitHub Link</a>
-        </li>
-        <li>
-            <h2>Project 2</h2>
-            <p>Description of the project and tools used.</p>
-            <a href="#">GitHub Link</a>
-        </li>
-    </ul>
+<section class="container py-5">
+    <h1 class="text-center mb-5">My Projects</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card h-100 shadow project-card">
+                <img src="{{ url_for('static', filename='images/project1.jpg') }}" class="card-img-top" alt="Project 1">
+                <div class="card-body">
+                    <h5 class="card-title">Project 1: Data Pipeline</h5>
+                    <p class="card-text">Designed a scalable ETL pipeline using Apache Spark and AWS.</p>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow project-card">
+                <img src="{{ url_for('static', filename='images/project2.jpg') }}" class="card-img-top" alt="Project 2">
+                <div class="card-body">
+                    <h5 class="card-title">Project 2: Machine Learning Model</h5>
+                    <p class="card-text">Developed a predictive analytics solution for client retention.</p>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow project-card">
+                <img src="{{ url_for('static', filename='images/project3.jpg') }}" class="card-img-top" alt="Project 3">
+                <div class="card-body">
+                    <h5 class="card-title">Project 3: Data Visualization</h5>
+                    <p class="card-text">Created interactive dashboards using Tableau and Python.</p>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 {% endblock %}

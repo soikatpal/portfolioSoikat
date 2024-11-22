@@ -1,8 +1,136 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
 {% block content %}
-<section>
-    <h1>Welcome to My Portfolio</h1>
-    <p>Hi, I'm Soikat Pal a Data Engineer specializing in Spark, AWS, and Python.</p>
+<section class="bg-light py-5">
+    <div class="container text-center">
+        <h2>Welcome to My Portfolio</h2>
+        <p>I’m a Data Engineer, Freelancer, and problem-solver specializing in Spark, AWS, and Python.</p>
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="p-4 bg-primary text-white rounded">
+                    <h3>9+ Years Experience</h3>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 bg-success text-white rounded">
+                    <h3>10+ Projects</h3>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 bg-info text-white rounded">
+                    <h3>5+ Certifications</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-dark text-white py-5">
+    <div class="container text-center">
+        <h2>Interactive Data Visualizations</h2>
+        <p>Explore the power of data through my projects!</p>
+        <canvas id="myChart" style="max-width: 600px; margin: auto;"></canvas>
+    </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Skill 1', 'Skill 2', 'Skill 3', 'Skill 4'],
+            datasets: [{
+                label: 'Skill Proficiency',
+                data: [85, 90, 75, 80],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(255, 206, 86, 0.5)',
+                    'rgba(75, 192, 192, 0.5)'
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+<section class="container py-5 text-center">
+    <h2>My Skills</h2>
+    <p>Proficiency in core tools and technologies.</p>
+    <canvas id="skillsChart" style="max-width: 600px; margin: auto;"></canvas>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('skillsChart').getContext('2d');
+    const skillsChart = new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: ['Spark', 'Python', 'AWS', 'SQL', 'Tableau'],
+            datasets: [{
+                label: 'Skill Proficiency (%)',
+                data: [95, 90, 85, 80, 75],
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 2,
+                pointBackgroundColor: 'rgba(54, 162, 235, 1)'
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                r: {
+                    beginAtZero: true,
+                    suggestedMax: 100
+                }
+            }
+        }
+    });
+</script>
+<section class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center">What People Say</h2>
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active text-center">
+                    <blockquote class="blockquote">
+                        <p>"The best data engineer I have worked with! Delivered beyond expectations."</p>
+                        <footer class="blockquote-footer">John Doe, CEO of DataCorp</footer>
+                    </blockquote>
+                </div>
+                <div class="carousel-item text-center">
+                    <blockquote class="blockquote">
+                        <p>"Efficient, creative, and a pleasure to work with on big data projects."</p>
+                        <footer class="blockquote-footer">Jane Smith, Project Manager</footer>
+                    </blockquote>
+                </div>
+                <div class="carousel-item text-center">
+                    <blockquote class="blockquote">
+                        <p>"Built scalable pipelines that transformed our business analytics."</p>
+                        <footer class="blockquote-footer">Mike Johnson, CTO of TechNova</footer>
+                    </blockquote>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
 </section>
 {% endblock %}

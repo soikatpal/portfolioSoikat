@@ -1,9 +1,14 @@
 {% extends "base.html" %}
 {% block title %}About Me{% endblock %}
 {% block content %}
-<section>
-    <h1>About Me</h1>
-    <p>I am a Data Engineer with 9 years of experience in building scalable data solutions.</p>
-    <p>Skills: Spark, AWS, Python</p>
-</section>
+<div class="row align-items-center">
+    <div class="col-md-6">
+        <img src="{{ url_for('static', filename='images/profile.jpg') }}" class="img-fluid rounded" alt="Your Photo">
+    </div>
+    <div class="col-md-6">
+        <h1>About Me</h1>
+        <p>I am a Data Engineer with 9 years of experience building scalable data solutions.</p>
+        <p><strong>Skills:</strong> Spark, AWS, Python</p>
+    </div>
+</div>
 {% endblock %}
